@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dd91289d-130e-431c-bf08-a79d4f449fad" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="$PROJECT_DIR$/../../GoRoot/go1.14.2" />
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1h4XJzLC4Ldt4IA7BxbdV5zTD7R" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="sqlite" />
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../xblog2.0" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="http.proxy" />
+  </component>
+  <component name="RunManager" selected="Go Build.go build oldpeople (1)">
+    <configuration name="go build oldpeople (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="老人手环" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <package value="oldpeople" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build oldpeople" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="老人手环" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="DIRECTORY" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build oldpeople (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dd91289d-130e-431c-bf08-a79d4f449fad" name="Default Changelist" comment="" />
+      <created>1599271269405</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599271269405</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2672" y="358" key="#Go_Modules" timestamp="1599271589188">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2672" y="358" key="#Go_Modules/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599271589188" />
+    <state x="2083" y="131" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599277623875">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2083" y="131" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599277623875" />
+    <state x="2621" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599274350880">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2621" y="325" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599274350880" />
+    <state x="2560" y="260" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1599277656110">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2560" y="260" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599277656110" />
+    <state x="2499" y="249" key="EnvironmentVariablesDialog" timestamp="1599271867699">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2499" y="249" key="EnvironmentVariablesDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599271867699" />
+    <state x="2409" y="243" key="FileChooserDialogImpl" timestamp="1599360551375">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2409" y="243" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599360551375" />
+    <state width="1877" height="365" key="GridCell.Tab.0.bottom" timestamp="1599309693647">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="365" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599309693647" />
+    <state width="1877" height="365" key="GridCell.Tab.0.center" timestamp="1599309693647">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="365" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599309693647" />
+    <state width="1877" height="365" key="GridCell.Tab.0.left" timestamp="1599309693647">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="365" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599309693647" />
+    <state width="1877" height="365" key="GridCell.Tab.0.right" timestamp="1599309693647">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="365" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599309693647" />
+    <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1599273080290">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="220" height="477" key="HiddenNamespacesPopup/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599273080290" />
+    <state x="2198" y="76" width="1216" height="612" key="dock-window-1" timestamp="1599276201864">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2198" y="76" width="1216" height="612" key="dock-window-1/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599276201864" />
+    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1599309413034">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599309413034" />
+  </component>
+</project>
