@@ -40,5 +40,5 @@ func GetHeart(c echo.Context) error {
 	if database.TakeLast(&data) != nil {
 		return DisplayError(c, "获取数据失败")
 	}
-	return DisplayOk(c, Heart{Heart: common.String2Int(data.Heart), HPressure: common.String2Int(data.HPressure), LPressure: common.String2Int(data.LPressure)}, "获取数据成功")
+	return DisplayOk(c, Heart{Heart: common.String2Int(data.Heart), HPressure: common.String2Int(data.HPressure), LPressure: common.String2Int(data.LPressure), Update: common.Time2String(data.Date, true)}, "获取数据成功")
 }

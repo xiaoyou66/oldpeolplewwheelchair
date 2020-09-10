@@ -6,7 +6,7 @@
 
 Ticker flipper;
 const uint16_t port = 1326;
-const char * host = "192.168.137.1"; // ip or dns
+const char * host = "122.51.134.241"; // ip or dns
 WiFiClient client;//创建一个tcp client连接 
 int lockstatue=0;//关锁状态
 

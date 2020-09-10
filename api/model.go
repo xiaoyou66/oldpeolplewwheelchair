@@ -11,9 +11,10 @@ type GPS struct {
 
 // 返回的心率数据
 type Heart struct {
-	Heart     int `json:"heart"`
-	HPressure int `json:"h_pressure"`
-	LPressure int `json:"l_pressure"`
+	Heart     int    `json:"heart"`
+	HPressure int    `json:"h_pressure"`
+	LPressure int    `json:"l_pressure"`
+	Update    string `json:"update"`
 }
 
 // 返回的陀螺仪数据

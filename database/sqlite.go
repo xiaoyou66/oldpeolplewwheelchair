@@ -4,7 +4,7 @@ package database
 
 import (
 	"fmt"
-	"gorm.io/driver/sqlite"
+	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
 
@@ -14,7 +14,8 @@ var Db *gorm.DB
 func DbInit() {
 	var err error
 	// 数据库初始化
-	if Db, err = gorm.Open(sqlite.Open("data/data.db"), &gorm.Config{}); err != nil {
+	dsn := "old:123456@tcp(127.0.0.1:3306)/old?charset=utf8mb4&parseTime=True&loc=Local"
+	if Db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{}); err != nil {
 		fmt.Println("出现错误")
 		panic("failed to connect database")
 	}

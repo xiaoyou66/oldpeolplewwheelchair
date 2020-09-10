@@ -10,7 +10,6 @@ import (
 
 // 数据库初始化
 func DataBaseInit() {
-	database.DbInit()
 	_ = database.CreateTable(database.GPS{})
 	_ = database.CreateTable(database.Heart{})
 	_ = database.CreateTable(database.Gyro{})
@@ -19,6 +18,7 @@ func DataBaseInit() {
 func main() {
 	// 初始化数据库连接
 	database.DbInit()
+	DataBaseInit()
 	// 启动tcp服务
 	go tcp.ServerStart()
 	// 启动api服务
