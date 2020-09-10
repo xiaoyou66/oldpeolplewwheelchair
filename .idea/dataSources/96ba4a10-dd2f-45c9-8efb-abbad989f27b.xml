@@ -11,46 +11,108 @@
     <collation id="4" parent="1" name="NOCASE"/>
     <collation id="5" parent="1" name="RTRIM"/>
     <table id="6" parent="2" name="gps"/>
-    <table id="7" parent="2" name="sqlite_master">
+    <table id="7" parent="2" name="gyros"/>
+    <table id="8" parent="2" name="hearts"/>
+    <table id="9" parent="2" name="sqlite_master">
       <System>1</System>
     </table>
-    <column id="8" parent="6" name="id">
+    <column id="10" parent="6" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
     </column>
-    <column id="9" parent="6" name="n">
+    <column id="11" parent="6" name="n">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="10" parent="6" name="e">
+    <column id="12" parent="6" name="e">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="11" parent="6" name="date">
+    <column id="13" parent="6" name="date">
       <Position>4</Position>
       <DataType>datetime|0s</DataType>
     </column>
-    <key id="12" parent="6">
+    <key id="14" parent="6">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="13" parent="7" name="type">
+    <column id="15" parent="7" name="id">
       <Position>1</Position>
-      <DataType>text|0s</DataType>
+      <DataType>integer|0s</DataType>
     </column>
-    <column id="14" parent="7" name="name">
+    <column id="16" parent="7" name="accel_x">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="15" parent="7" name="tbl_name">
+    <column id="17" parent="7" name="accel_y">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="16" parent="7" name="rootpage">
+    <column id="18" parent="7" name="accel_z">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="19" parent="7" name="gyro_x">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="20" parent="7" name="gyro_y">
+      <Position>6</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="21" parent="7" name="gyro_z">
+      <Position>7</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="22" parent="7" name="date">
+      <Position>8</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <key id="23" parent="7">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="8" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+    </column>
+    <column id="25" parent="8" name="heart">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="26" parent="8" name="h_pressure">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="27" parent="8" name="l_pressure">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="28" parent="8" name="date">
+      <Position>5</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <key id="29" parent="8">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="30" parent="9" name="type">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="31" parent="9" name="name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="32" parent="9" name="tbl_name">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="33" parent="9" name="rootpage">
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="17" parent="7" name="sql">
+    <column id="34" parent="9" name="sql">
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>

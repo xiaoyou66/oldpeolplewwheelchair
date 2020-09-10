@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   MPU6050                                                           09/10/2020 09:13:37 PAGE 1   
+C51 COMPILER V9.60.0.0   MPU6050                                                           09/10/2020 19:38:40 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MPU6050
@@ -62,7 +62,7 @@ line level    source
   52          {                                               
   53   1              unsigned int i,j;                               
   54   1              for(i=0;i<k;i++)
-C51 COMPILER V9.60.0.0   MPU6050                                                           09/10/2020 09:13:37 PAGE 2   
+C51 COMPILER V9.60.0.0   MPU6050                                                           09/10/2020 19:38:40 PAGE 2   
 
   55   1              {                       
   56   2                      for(j=0;j<121;j++);
@@ -126,7 +126,7 @@ line level    source
  114   1          SCL = 0;                    //拉低时钟线
  115   1          Delay5us();                 //延时
  116   1          return CY;
-C51 COMPILER V9.60.0.0   MPU6050                                                           09/10/2020 09:13:37 PAGE 3   
+C51 COMPILER V9.60.0.0   MPU6050                                                           09/10/2020 19:38:40 PAGE 3   
 
  117   1      }
  118          //*****************************************************************************************************
@@ -190,7 +190,7 @@ line level    source
  176   1              REG_data=I2C_RecvByte();       //读出寄存器数据
  177   1              I2C_SendACK(1);                //接收应答信号
  178   1              I2C_Stop();                    //停止信号
-C51 COMPILER V9.60.0.0   MPU6050                                                           09/10/2020 09:13:37 PAGE 4   
+C51 COMPILER V9.60.0.0   MPU6050                                                           09/10/2020 19:38:40 PAGE 4   
 
  179   1              return REG_data;
  180   1      }
@@ -254,7 +254,7 @@ line level    source
  238   1              display(GetData(GYRO_ZOUT_H));          //显示Z轴角速度
  239   1              SendString("e");
  240   1              //显示方向信息
-C51 COMPILER V9.60.0.0   MPU6050                                                           09/10/2020 09:13:37 PAGE 5   
+C51 COMPILER V9.60.0.0   MPU6050                                                           09/10/2020 19:38:40 PAGE 5   
 
  241   1              lcd_printf(x,GetData(ACCEL_XOUT_H));
  242   1              lcd_printf(y,GetData(ACCEL_YOUT_H));

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   OLED                                                              09/10/2020 09:13:37 PAGE 1   
+C51 COMPILER V9.60.0.0   OLED                                                              09/10/2020 19:38:41 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE OLED
@@ -62,41 +62,36 @@ line level    source
   50          // 显示心率
   51          void showHeart(unsigned char str[]){
   52   1              OLED_P8x16Str(61,2,str);
-C51 COMPILER V9.60.0.0   OLED                                                              09/10/2020 09:13:37 PAGE 2   
+C51 COMPILER V9.60.0.0   OLED                                                              09/10/2020 19:38:41 PAGE 2   
 
   53   1      }
   54          
   55          //显示血压
-  56          void showPress(unsigned char h[],unsigned char l[]){
+  56          void showPressH(unsigned char h[]){
   57   1              OLED_P8x16Str(61,4,h);
-  58   1              OLED_P8x16Str(101,4,l);
-  59   1      }
-  60          
-  61          ////获取数组中某个字符
-  62          //char* showChar(unsigned char arr[],int positin){
-  63          //      unsigned char ch[2];
-  64          //      ch[0] = "6";
-  65          //      ch[1] = "\0";
-  66          //      return ch;
-  67          //}
-  68          
-  69          //显示陀螺仪数据
-  70          void showPosition(unsigned char x[],unsigned char y[],unsigned char z[]){
-  71   1              OLED_P8x16Str(18,6,x);
-  72   1              // 注意单引号和双引号的区别
-  73   1              OLED_P8x16Str(42,6,",");
-  74   1              OLED_P8x16Str(50,6,y);
-  75   1              OLED_P8x16Str(74,6,",");
-  76   1              OLED_P8x16Str(82,6,z);
-  77   1      }
+  58   1      }
+  59          void showPressL(unsigned char l[]){
+  60   1              OLED_P8x16Str(101,4,l);
+  61   1      }
+  62          
+  63          
+  64          //显示陀螺仪数据
+  65          void showPosition(unsigned char x[],unsigned char y[],unsigned char z[]){
+  66   1              OLED_P8x16Str(18,6,x);
+  67   1              // 注意单引号和双引号的区别
+  68   1              OLED_P8x16Str(42,6,",");
+  69   1              OLED_P8x16Str(50,6,y);
+  70   1              OLED_P8x16Str(74,6,",");
+  71   1              OLED_P8x16Str(82,6,z);
+  72   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1239    ----
+   CODE SIZE        =   1233    ----
    CONSTANT SIZE    =   4821    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----      46
+   DATA SIZE        =   ----      40
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

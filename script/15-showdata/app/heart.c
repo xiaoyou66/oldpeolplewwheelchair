@@ -15,8 +15,6 @@
 
 code unsigned char CMD_GET_DATA[6] = {0xfd,0x00,0x00,0x00,0x00,0x00};  //协议包头
 
-
-
 #define FOSC 11059200L          //系统频率
 #define BAUD 115200            //串口波特率
 
@@ -35,7 +33,20 @@ sfr IE2   = 0xaf;               //中断控制寄存器2
 sfr P_SW2   = 0xBA;             //外设功能切换寄存器2
 #define S2_S0 0x01              //P_SW2.0
 bit busy2;
-bit flag = 0; // 串口中断自动清除的控制位，如果为0就自动清除,不处理，如果为1那么就自己手动处理
+
+bit flag = 0; // 用来判断当前是否接收到了心率数据
+int index = 0; // 当前接收到数据的位置
+// 使用全局变量来存储接收到的串口数据
+unsigned char heartData[3] = {0,0,0};
+
+// 延时10us的函数
+void Delay10us()		//@11.0592MHz
+{
+	unsigned char i;
+	_nop_();
+	i = 25;
+	while (--i);
+}
 
 // 串口2的初始化
 void u2Init()
@@ -66,11 +77,27 @@ UART2 中断服务程序
 -----------------------------*/
 void Uart2() interrupt 8
 {
+	unsigned char dat;
     if (S2CON & S2RI)
     {
-		if(!flag){
-			S2CON &= ~S2RI;         //清除S2RI位
+        S2CON &= ~S2RI;         //清除S2RI位
+        dat = S2BUF;             // 获取串口数据
+		// 判断是否准备接收
+		if (flag) {
+			// 判断数组是否越界
+			if (index > 2) {
+				flag=0;index=0;
+			} else {	
+				// 接收数据
+				heartData[index] = dat;
+				index ++ ;
+			}
 		}
+		// 判断是否可以开始接收数据
+		if (dat==0xfd){			// 准备接收数据
+			flag = 1;
+		}
+		
     }
     if (S2CON & S2TI)
     {
@@ -100,19 +127,6 @@ void SendString2(char *s)
     }
 }
 
-// 串口接收数据
-unsigned char UART2_Receive_Byte()
-{	
-	unsigned char dat;
-	// 判断是否有数据
-	while(!(S2CON & S2RI));
-	dat = S2BUF;
-	S2CON &= ~S2RI;         //清除S2RI位
-	//返回获取到的数据
-	return dat;
-}
-
-
 // 16进制数据转字符串
 char * hex2char(char * str,unsigned char dat){
     //先获取百位 +48 是把数字转换为asciall码
@@ -126,37 +140,20 @@ char * hex2char(char * str,unsigned char dat){
 
 // 获取心率数据
 void getHeart(){
-	int i;
-	unsigned char dat[3] = {0,0,0};
 	char str[4] = {0,0,0,0};
-	flag = 1;
-	// 判断是否真的收到了数据
-	while(1){
-		if(UART2_Receive_Byte() == 0xfd){
-			break;
-		} else {
-			return;
-		}
-	}
-	// 接收并处理数据
-	for(i=0;i<3;i++){
-		dat[i] = UART2_Receive_Byte();
-		// 如果数据为0就自动清除数据，避免卡死
-		if(dat[i] == 0x00){dat[i]=0xff;}
-	}
 	//对获取的数据进行处理转换为可以识别的10进制字符串
 	//串口发送数据(这里我们通过前缀来进行划分)
 	SendString("$HEART,");
-	SendString(hex2char(str,dat[0]));
+	SendString(hex2char(str,heartData[0]));
 	SendString(",");
-	SendString(hex2char(str,dat[1]));
+	SendString(hex2char(str,heartData[1]));
 	SendString(",");
-	SendString(hex2char(str,dat[2]));
+	SendString(hex2char(str,heartData[2]));
 	SendString("e");
 	// 显示屏显示
-	showHeart(hex2char(str,dat[3]));
-	showPress(hex2char(str,dat[0]),hex2char(str,dat[1]));
-	flag = 0;
+	showHeart(hex2char(str,heartData[2]));
+	showPressH(hex2char(str,heartData[0]));
+	showPressL(hex2char(str,heartData[1]));
 }
 
 

@@ -53,18 +53,13 @@ void showHeart(unsigned char str[]){
 }
 
 //显示血压
-void showPress(unsigned char h[],unsigned char l[]){
+void showPressH(unsigned char h[]){
 	OLED_P8x16Str(61,4,h);
+}
+void showPressL(unsigned char l[]){
 	OLED_P8x16Str(101,4,l);
 }
 
-////获取数组中某个字符
-//char* showChar(unsigned char arr[],int positin){
-//	unsigned char ch[2];
-//	ch[0] = "6";
-//	ch[1] = "\0";
-//	return ch;
-//}
 
 //显示陀螺仪数据
 void showPosition(unsigned char x[],unsigned char y[],unsigned char z[]){

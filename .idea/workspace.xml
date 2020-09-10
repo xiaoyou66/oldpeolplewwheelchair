@@ -1,8 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="dd91289d-130e-431c-bf08-a79d4f449fad" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/96ba4a10-dd2f-45c9-8efb-abbad989f27b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/96ba4a10-dd2f-45c9-8efb-abbad989f27b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/display.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/display.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/model.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/time.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/time.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/data.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/database/model.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/Listings/STARTUP.lst" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/Listings/STARTUP.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/Listings/heart.lst" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/Listings/heart.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/Listings/main.lst" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/Listings/main.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/Listings/mpu6050.lst" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/Listings/mpu6050.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/Listings/oled.lst" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/Listings/oled.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/Listings/send.lst" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/Listings/send.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/Listings/wheelchair.m51" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/Listings/wheelchair.m51" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/Objects/STARTUP.obj" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/Objects/STARTUP.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/Objects/heart.obj" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/Objects/heart.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/Objects/main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/Objects/main.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/Objects/mpu6050.obj" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/Objects/mpu6050.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/Objects/oled.obj" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/Objects/oled.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/Objects/send.obj" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/Objects/send.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/Objects/wheelchair" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/Objects/wheelchair" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/Objects/wheelchair.build_log.htm" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/Objects/wheelchair.build_log.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/Objects/wheelchair.hex" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/Objects/wheelchair.hex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/app/heart.c" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/app/heart.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/app/oled.c" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/app/oled.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/app/oled.h" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/app/oled.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/15-showdata/wheelchair.uvgui.Administrator" beforeDir="false" afterPath="$PROJECT_DIR$/script/15-showdata/wheelchair.uvgui.Administrator" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/script/readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/wifi/wifi.ino" beforeDir="false" afterPath="$PROJECT_DIR$/script/wifi/wifi.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tcp/tcp.go" beforeDir="false" afterPath="$PROJECT_DIR$/tcp/tcp.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,13 +88,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../xblog2.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="http.proxy" />
   </component>
   <component name="RunManager" selected="Go Build.go build oldpeople (1)">
@@ -67,6 +119,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build oldpeople (1)" />
+        <item itemvalue="Go Build.go build oldpeople" />
       </list>
     </recent_temporary>
   </component>
@@ -86,15 +139,35 @@
       <option name="project" value="LOCAL" />
       <updated>1599391494853</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add: 完成硬件部分代码编写">
+      <created>1599700974515</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599700974515</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1.完成服务端代码书写，现在可以接受请求和发送请求了。&#10;2.完成树莓派串口通信，可以用Python读取数据并上传到服务器了&#10;3.完成硬件端串口通信函数的书写，以及IIC,现在可以正常获取陀螺仪数据并显示了" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.完成服务端代码书写，现在可以接受请求和发送请求了。&#10;2.完成树莓派串口通信，可以用Python读取数据并上传到服务器了&#10;3.完成硬件端串口通信函数的书写，以及IIC,现在可以正常获取陀螺仪数据并显示了" />
+    <MESSAGE value="add: 完成硬件部分代码编写" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: 完成硬件部分代码编写" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -124,30 +197,39 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2409" y="243" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599397247126" />
-    <state width="1877" height="365" key="GridCell.Tab.0.bottom" timestamp="1599309693647">
-      <screen x="1920" y="0" width="1920" height="1050" />
+    <state width="1877" height="293" key="GridCell.Tab.0.bottom" timestamp="1599728782050">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state width="1877" height="293" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1599728782050" />
     <state width="1877" height="365" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599309693647" />
-    <state width="1877" height="365" key="GridCell.Tab.0.center" timestamp="1599309693647">
-      <screen x="1920" y="0" width="1920" height="1050" />
+    <state width="1877" height="293" key="GridCell.Tab.0.center" timestamp="1599728782050">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state width="1877" height="293" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1599728782050" />
     <state width="1877" height="365" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599309693647" />
-    <state width="1877" height="365" key="GridCell.Tab.0.left" timestamp="1599309693647">
-      <screen x="1920" y="0" width="1920" height="1050" />
+    <state width="1877" height="293" key="GridCell.Tab.0.left" timestamp="1599728782050">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state width="1877" height="293" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1599728782050" />
     <state width="1877" height="365" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599309693647" />
-    <state width="1877" height="365" key="GridCell.Tab.0.right" timestamp="1599309693647">
-      <screen x="1920" y="0" width="1920" height="1050" />
+    <state width="1877" height="293" key="GridCell.Tab.0.right" timestamp="1599728782050">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state width="1877" height="293" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1599728782050" />
     <state width="1877" height="365" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599309693647" />
     <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1599273080290">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="220" height="477" key="HiddenNamespacesPopup/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599273080290" />
-    <state x="2472" y="258" key="Vcs.Push.Dialog.v2" timestamp="1599391511618">
-      <screen x="1920" y="0" width="1920" height="1050" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1599700990628">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1599700990628" />
     <state x="2472" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599391511618" />
+    <state x="820" y="338" width="336" height="373" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1599728037929">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="820" y="338" width="336" height="373" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1599728037929" />
     <state x="2198" y="76" width="1216" height="612" key="dock-window-1" timestamp="1599276201864">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>

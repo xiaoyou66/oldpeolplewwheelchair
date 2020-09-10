@@ -6,6 +6,7 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
+// API服务器初始化
 func WebInit() {
 	e := echo.New()
 	// 开启路由

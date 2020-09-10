@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"log"
 	"net"
+	"oldpeople/database"
+	"strings"
 	"time"
 )
 
@@ -13,6 +15,32 @@ import (
 func checkError(err error) {
 	if err != nil {
 		log.Fatal(err.Error())
+	}
+}
+
+//数据处理函数，用于把心率和陀螺仪的数据存储进数据库
+func DataProcess(data string) {
+	// 判断数据类型
+	if strings.Index(data, "$HEART") != -1 {
+		// 这里说明是心率数据
+		row := strings.Split(data, ",")
+		if database.InsertData(&database.Heart{Heart: row[3], HPressure: row[1], LPressure: row[2], Date: time.Now()}) != nil {
+			fmt.Println("insert heart data error!")
+		}
+	} else if strings.Index(data, "$MPU6050") != -1 {
+		// 这里说明接收到的是陀螺仪的数据
+		row := strings.Split(data, ",")
+		var gyro database.Gyro
+		gyro.AccelX = row[1]
+		gyro.AccelY = row[2]
+		gyro.AccelZ = row[3]
+		gyro.GyroX = row[4]
+		gyro.GyroY = row[5]
+		gyro.GyroZ = row[6]
+		gyro.Date = time.Now()
+		if database.InsertData(&gyro) != nil {
+			fmt.Println("insert gyro data error!")
+		}
 	}
 }
 
@@ -31,6 +59,7 @@ func clientHandle(conn net.Conn) {
 			break
 		}
 		// 打印读取到的数据
+		DataProcess(string(data))
 		fmt.Println("get_data:", string(data))
 	}
 }
@@ -38,7 +67,7 @@ func clientHandle(conn net.Conn) {
 // 启动tcp服务
 func ServerStart() {
 	// 创建一个tcp服务器
-	tcpAddr, err := net.ResolveTCPAddr("tcp4", "127.0.0.1:1324")
+	tcpAddr, err := net.ResolveTCPAddr("tcp4", "0.0.0.0:1326")
 	checkError(err)
 	// 启动tcp服务器并监听端口
 	listen, err := net.ListenTCP("tcp", tcpAddr)
