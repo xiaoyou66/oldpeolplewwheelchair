@@ -51,4 +51,5 @@ void  display_ACCEL_z();
 uchar Single_ReadI2C(uchar REG_Address);						//读取I2C数据
 void  Single_WriteI2C(uchar REG_Address,uchar REG_data);	    //向I2C写入数据
 int   GetData(uchar REG_Address);
+void startGetPosition();
 #endif

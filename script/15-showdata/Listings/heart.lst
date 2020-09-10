@@ -1,0 +1,200 @@
+C51 COMPILER V9.60.0.0   HEART                                                             09/10/2020 09:13:37 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HEART
+OBJECT MODULE PLACED IN .\Objects\heart.obj
+COMPILER INVOKED BY: D:\APP\Keil\C51\BIN\C51.EXE app\heart.c OPTIMIZE(8,SPEED) BROWSE INCDIR(.\app) DEBUG OBJECTEXTEND P
+                    -RINT(.\Listings\heart.lst) OBJECT(.\Objects\heart.obj)
+
+line level    source
+
+   1          /***
+   2          心率模块控制核心驱动，这里我们采用的是串口2
+   3          该模块负责发送并获取心率数据
+   4          // 之前调试串口2死活没用发现是我自己没有把C文件引入，下次自己要注意一下！！
+   5          
+   6          //这个模块有两个注意事项
+   7          //1.一定要用橡皮筋帮着手，要不然会无法检测，
+   8          //2.数据要等20秒左右才会正常显示，前面会一直为0，后面就会显示正常
+   9          ***/
+  10          #include "reg51.h"
+  11          #include "intrins.h"
+  12          #include "heart.h"
+  13          #include "send.h"
+  14          #include "oled.h" 
+  15          
+  16          code unsigned char CMD_GET_DATA[6] = {0xfd,0x00,0x00,0x00,0x00,0x00};  //协议包头
+  17          
+  18          
+  19          
+  20          #define FOSC 11059200L          //系统频率
+  21          #define BAUD 115200            //串口波特率
+  22          
+  23          sfr AUXR  = 0x8e;               //辅助寄存器
+  24          sfr S2CON = 0x9a;               //UART2 控制寄存器
+  25          sfr S2BUF = 0x9b;               //UART2 数据寄存器
+  26          sfr T2H   = 0xd6;               //定时器2高8位
+  27          sfr T2L   = 0xd7;               //定时器2低8位
+  28          sfr IE2   = 0xaf;               //中断控制寄存器2
+  29          
+  30          #define S2RI  0x01              //S2CON.0
+  31          #define S2TI  0x02              //S2CON.1
+  32          #define S2RB8 0x04              //S2CON.2
+  33          #define S2TB8 0x08              //S2CON.3
+  34          
+  35          sfr P_SW2   = 0xBA;             //外设功能切换寄存器2
+  36          #define S2_S0 0x01              //P_SW2.0
+  37          bit busy2;
+  38          bit flag = 0; // 串口中断自动清除的控制位，如果为0就自动清除,不处理，如果为1那么就自己手动处理
+  39          
+  40          // 串口2的初始化
+  41          void u2Init()
+  42          {
+  43   1              //P_SW2负责控制串口2在2组管脚之间切换的控制位
+  44   1          P_SW2 &= ~S2_S0;            //S2_S0=0 (P1.0/RxD2, P1.1/TxD2)
+  45   1      //  P_SW2 |= S2_S0;             //S2_S0=1 (P4.6/RxD2_2, P4.7/TxD2_2)
+  46   1              //这个负责控制串口2的工作方式，这里我们配置的和串口1一样
+  47   1          S2CON = 0x50;               //8位可变波特率
+  48   1              //T2L 和T2H 分为控制定时器2的高八位和低八位，主要负责波特率的计算
+  49   1              T2L = (65536 - (FOSC/4/BAUD));   //设置波特率重装值
+  50   1          T2H = (65536 - (FOSC/4/BAUD))>>8;
+  51   1              //AUXR 是一个辅助寄存器，主要负责控制定时器2的控制
+  52   1              // 我们这里是 00010100 T2R为1 T2X12为1
+  53   1              //01010100
+  54   1              //T2R是定时器2的运行控制位，为1就代表允许定时器2运行
+C51 COMPILER V9.60.0.0   HEART                                                             09/10/2020 09:13:37 PAGE 2   
+
+  55   1              //T2X12为定时器2速度控制。我们这里为1就是说明定时器2的速度为传统51的12倍，不分频
+  56   1              //01000000 T1x12为1表示定时器1的速度是传统8051的12倍
+  57   1          AUXR = AUXR|0x14;                //T2为1T模式, 并启动定时器2
+  58   1              //开启串口2中断，这里不需要TR2因为TR2在AUXR里面
+  59   1          IE2 = 0x01;                 //使能串口2中断
+  60   1              // 开启系统中断
+  61   1          EA = 1;
+  62   1      }
+  63          
+  64          /*----------------------------
+  65          UART2 中断服务程序
+  66          -----------------------------*/
+  67          void Uart2() interrupt 8
+  68          {
+  69   1          if (S2CON & S2RI)
+  70   1          {
+  71   2                      if(!flag){
+  72   3                              S2CON &= ~S2RI;         //清除S2RI位
+  73   3                      }
+  74   2          }
+  75   1          if (S2CON & S2TI)
+  76   1          {
+  77   2              S2CON &= ~S2TI;         //清除S2TI位
+  78   2              busy2 = 0;               //清忙标志
+  79   2          }
+  80   1      }
+  81          
+  82          /*----------------------------
+  83          发送串口数据
+  84          ----------------------------*/
+  85          void SendData2(unsigned char dat)
+  86          {
+  87   1          while (busy2);               //等待前面的数据发送完成
+  88   1          busy2 = 1;
+  89   1          S2BUF = dat;                //写数据到UART2数据寄存器
+  90   1      }
+  91          
+  92          /*----------------------------
+  93          发送字符串
+  94          ----------------------------*/
+  95          void SendString2(char *s)
+  96          {
+  97   1          while (*s)                  //检测字符串结束标志
+  98   1          {
+  99   2              SendData2(*s++);         //发送当前字符
+ 100   2          }
+ 101   1      }
+ 102          
+ 103          // 串口接收数据
+ 104          unsigned char UART2_Receive_Byte()
+ 105          {       
+ 106   1              unsigned char dat;
+ 107   1              // 判断是否有数据
+ 108   1              while(!(S2CON & S2RI));
+ 109   1              dat = S2BUF;
+ 110   1              S2CON &= ~S2RI;         //清除S2RI位
+ 111   1              //返回获取到的数据
+ 112   1              return dat;
+ 113   1      }
+ 114          
+ 115          
+ 116          // 16进制数据转字符串
+C51 COMPILER V9.60.0.0   HEART                                                             09/10/2020 09:13:37 PAGE 3   
+
+ 117          char * hex2char(char * str,unsigned char dat){
+ 118   1          //先获取百位 +48 是把数字转换为asciall码
+ 119   1          str[0] = (dat/100)+48;
+ 120   1               //取十位
+ 121   1          str[1] = dat%100/10+48;
+ 122   1               //取个位
+ 123   1          str[2] = dat%10 +48;
+ 124   1              return str;
+ 125   1      }
+ 126          
+ 127          // 获取心率数据
+ 128          void getHeart(){
+ 129   1              int i;
+ 130   1              unsigned char dat[3] = {0,0,0};
+ 131   1              char str[4] = {0,0,0,0};
+ 132   1              flag = 1;
+ 133   1              // 判断是否真的收到了数据
+ 134   1              while(1){
+ 135   2                      if(UART2_Receive_Byte() == 0xfd){
+ 136   3                              break;
+ 137   3                      } else {
+ 138   3                              return;
+ 139   3                      }
+ 140   2              }
+ 141   1              // 接收并处理数据
+ 142   1              for(i=0;i<3;i++){
+ 143   2                      dat[i] = UART2_Receive_Byte();
+ 144   2                      // 如果数据为0就自动清除数据，避免卡死
+ 145   2                      if(dat[i] == 0x00){dat[i]=0xff;}
+ 146   2              }
+ 147   1              //对获取的数据进行处理转换为可以识别的10进制字符串
+ 148   1              //串口发送数据(这里我们通过前缀来进行划分)
+ 149   1              SendString("$HEART,");
+ 150   1              SendString(hex2char(str,dat[0]));
+ 151   1              SendString(",");
+ 152   1              SendString(hex2char(str,dat[1]));
+ 153   1              SendString(",");
+ 154   1              SendString(hex2char(str,dat[2]));
+ 155   1              SendString("e");
+ 156   1              // 显示屏显示
+ 157   1              showHeart(hex2char(str,dat[3]));
+ 158   1              showPress(hex2char(str,dat[0]),hex2char(str,dat[1]));
+ 159   1              flag = 0;
+ 160   1      }
+ 161          
+ 162          
+ 163          //开始进行心率检测
+ 164          void Startheart(){
+ 165   1              int i;
+ 166   1              for(i=0;i<6;i++){
+ 167   2                      SendData2(CMD_GET_DATA[i]);
+ 168   2              }
+ 169   1              getHeart();
+ 170   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    391    ----
+   CONSTANT SIZE    =     25    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      10
+C51 COMPILER V9.60.0.0   HEART                                                             09/10/2020 09:13:37 PAGE 4   
+
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      2    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,13 +1,11 @@
 /***
-串口控制发送函数
+串口控制发送函数，
+主要用于控制串口一发送数据，我们这里利用串口1向wifi发送数据
 ***/
 #include "reg51.h"
 #include "intrins.h"
 #include "send.h"
-
-typedef unsigned char BYTE;
-typedef unsigned int WORD;
-
+#include "heart.h"
 #define FOSC 11059200L          //系统频率
 #define BAUD 9600             //串口波特率
 
@@ -75,13 +73,16 @@ void time0() interrupt 1 using 1
 假设，我们又在中断里调用了一个delay();这个delay是起延时作用。
 那么，我们就需要确保我们使用的寄存器组是同一组，否则，就会出现混乱。
 -----------------------------*/
-void Uart() interrupt 4 using 1
+void Uart() interrupt 4
 {
+	unsigned char dat;
 	// 在串口发生中断的时候RI为1表示有数据接收，我们把这位清零用于下次判断
     if (RI)
     {
         RI = 0;                 //清除RI位
-        P0 = SBUF;              //P0显示串口数据
+		dat = SBUF;
+		//SendData2(dat);
+       // P0 = SBUF;              //P0显示串口数据
     }
 	// TI为0表示发送中断，我们主要用来判断当前是否可以发送数据
     if (TI)
@@ -95,21 +96,22 @@ void Uart() interrupt 4 using 1
 发送串口数据
 这个函数用来向串口发送数据
 ----------------------------*/
-void SendData(BYTE dat)
+void SendData(unsigned char dat)
 {
 	// busy判断数据是否发送完毕
-    while (busy);               //等待前面的数据发送完成
+    while (busy);           //等待前面的数据发送完成
 	// 我们用ACC来存放发送的数据
     ACC = dat;                  //获取校验位P (PSW.0)
 	//P表示奇偶的标志位（当ACC1的个数为奇数的时候P为1反之）。TB8是发送的第9位数据，所以这个是用来校验的
-    if (P)                      //根据P来设置校验位
-    {
-        TB8 = 0;                //设置校验位为0
-    }
-    else
-    {
-        TB8 = 1;                //设置校验位为1
-    }
+	// 因为我们不校验，所以不需要设置这个东西
+//    if (P)                      //根据P来设置校验位
+//    {
+//        TB8 = 0;                //设置校验位为0
+//    }
+//    else
+//    {
+//        TB8 = 1;                //设置校验位为1
+//    }
 	// busy表示需要发送数据，当发送完毕时，会清0
     busy = 1;
 	// 发需要发送的数据放到寄存器中去

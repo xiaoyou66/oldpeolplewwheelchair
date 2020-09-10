@@ -396,6 +396,16 @@
               <FileType>1</FileType>
               <FilePath>.\app\mpu6050.c</FilePath>
             </File>
+            <File>
+              <FileName>heart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\app\heart.c</FilePath>
+            </File>
+            <File>
+              <FileName>oled.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\app\oled.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

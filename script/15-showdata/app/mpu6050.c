@@ -1,21 +1,24 @@
 //****************************************
-//MPU6050的核心驱动
+//MPU6050的核心驱动，
+//该程序负责获取MPU6050的数据
 //****************************************
-#include <REG52.H>	
+#include <REG51.H>	
 #include <math.h>    //Keil library  
 #include <stdio.h>   //Keil library	
 #include <INTRINS.H>
 #include "mpu6050.h"
-
+#include "send.h"
+#include "oled.h" 
 //****************************************
 // 定义单片机的IIC串口，自己可以修改
 //****************************************
-sbit    SCL=P2^7;			//IIC时钟引脚定义
-sbit    SDA=P2^6;			//IIC数据引脚定义
+sbit    SCL=P2^6;			//IIC时钟引脚定义
+sbit    SDA=P2^7;			//IIC数据引脚定义
 //**************************************************************************************************
 //定义类型及变量
 //**************************************************************************************************
 int	dis_data;					//变量
+uchar dis[6];					//显示数字(-511至512)的字符数组
 //********************************************************************************
 //整数转字符串
 //********************************************************************************
@@ -25,8 +28,10 @@ void lcd_printf(uchar *s,int temp_data)
 	{
 		temp_data=-temp_data;
 		*s='-';
+	}  else {
+		*s=' ';
 	}
-	else *s=' ';
+	
 
 	*++s =temp_data/10000+0x30;
 	temp_data=temp_data%10000;     //取余运算
@@ -195,3 +200,49 @@ int GetData(uchar REG_Address)
 	return ((H<<8)+L);   //合成数据
 }
 
+// 串口显示加速度传感器的数据
+void display(int value){
+	int i;
+	lcd_printf(dis,value);
+	for(i=0;i<6;i++)
+	{
+       SendData(dis[i]);
+    }
+}
+
+//对转换到的5位字符进行处理，方便OLED 屏幕显示
+void OLED_process(uchar *s){
+	s[0] = s[3];
+	s[1] = s[4];
+	s[2] = s[5];
+	// 要想字符串正确显示，那么最后一位必须以0来结尾，注意不要填/0，没用
+	s[3] = 0;
+}
+
+
+// 开始获取陀螺仪的数据
+void startGetPosition(){
+	unsigned char x[6],y[6],z[6];
+	//串口发送数据(这里我们通过前缀来进行划分)
+	SendString("$MPU6050,");
+	display(GetData(ACCEL_XOUT_H));		//显示X轴加速度
+	SendString(",");
+	display(GetData(ACCEL_YOUT_H));		//显示Y轴加速度
+	SendString(",");
+	display(GetData(ACCEL_ZOUT_H));		//显示Z轴加速度
+	SendString(",");
+	display(GetData(GYRO_XOUT_H));		//显示X轴角速度
+	SendString(",");
+	display(GetData(GYRO_YOUT_H));		//显示Y轴角速度
+	SendString(",");
+	display(GetData(GYRO_ZOUT_H));		//显示Z轴角速度
+	SendString("e");
+	//显示方向信息
+	lcd_printf(x,GetData(ACCEL_XOUT_H));
+	lcd_printf(y,GetData(ACCEL_YOUT_H));
+	lcd_printf(z,GetData(ACCEL_ZOUT_H));
+	OLED_process(x);
+	OLED_process(y);
+	OLED_process(z);
+	showPosition(x,y,z);
+}
