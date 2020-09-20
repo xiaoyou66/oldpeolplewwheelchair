@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">老人监控</string>
+    <string name="home">今日数据</string>
+    <string name="chart">图表统计</string>
+    <string name="map">位置查看</string>
+    <string name="setting">软件设置</string>
+    <string name="heart">心率:</string>
+    <string name="pause_up">收缩压:</string>
+    <string name="pause_up_pi">mmHg</string>
+    <string name="pause_down">舒张压:</string>
+    <string name="heart_pi">次/分钟</string>
+    <string name="set_url">监控地址</string>
+    <string name="reset_rtsp">重置rtsp</string>
+    <string name="refresh">刷新视频</string>
+</resources>
