@@ -11,4 +11,6 @@ func Router(e *echo.Echo) {
 	e.GET("api/v1/get/gps", GetGps)
 	// 获取心率数据
 	e.GET("api/v1/get/heart", GetHeart)
+	// 获取心率统计数据
+	e.GET("api/v1/get/recent_heart", GetRecentHeart)
 }

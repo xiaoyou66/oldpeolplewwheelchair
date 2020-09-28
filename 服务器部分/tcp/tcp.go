@@ -24,7 +24,11 @@ func DataProcess(data string) {
 	if strings.Index(data, "$HEART") != -1 {
 		// 这里说明是心率数据
 		row := strings.Split(data, ",")
-		if database.InsertData(&database.Heart{Heart: row[3], HPressure: row[1], LPressure: row[2], Date: time.Now()}) != nil {
+		// 如果数据为空那么就不插入数据
+		if row[1] == "000" || row[1] == "255" {
+			return
+		}
+		if database.InsertData(&database.Heart{Heart: row[3][:3], HPressure: row[1], LPressure: row[2], Date: time.Now()}) != nil {
 			fmt.Println("insert heart data error!")
 		}
 	} else if strings.Index(data, "$MPU6050") != -1 {

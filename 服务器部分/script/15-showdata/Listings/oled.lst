@@ -1,0 +1,100 @@
+C51 COMPILER V9.60.0.0   OLED                                                              09/10/2020 19:38:41 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE OLED
+OBJECT MODULE PLACED IN .\Objects\oled.obj
+COMPILER INVOKED BY: D:\APP\Keil\C51\BIN\C51.EXE app\oled.c OPTIMIZE(8,SPEED) BROWSE INCDIR(.\app) DEBUG OBJECTEXTEND PR
+                    -INT(.\Listings\oled.lst) OBJECT(.\Objects\oled.obj)
+
+line level    source
+
+   1          /************************************************************************************
+   2          * //OLEDÏÔÊ¾µÄÖ÷³ÌÐò£¬Ö÷ÒªÏÔÊ¾Ä¬ÈÏµÄÉèÖÃ
+   3          *
+   4          * 1. void delay(unsigned int z) -- Ö÷º¯ÊýÖÐÓÃÓÚµ÷ÕûÏÔÊ¾Ð§¹ûµÄÑÓÊ±º¯Êý,STC89C52 12MHZ z=1Ê±´óÔ¼ÑÓÊ±1ms,ÆäËû
+             -ÆµÂÊÐèÒª×Ô¼º¼ÆËã
+   5          * 2. void main(void) -- Ö÷º¯Êý
+   6          *
+   7          * History: none;
+   8          *
+   9          *************************************************************************************/
+  10          
+  11          //#include "reg52.h"
+  12          #include "code-data.h"
+  13          #include "oled-iic.h"
+  14          #include "oled.h"
+  15          
+  16          // OLED ÏÔÊ¾ÆÁ³õÊ¼»¯£¨ÏÔÊ¾Ä¬ÈÏµÄÐÅÏ¢£©
+  17          void oledInit(void)
+  18          {
+  19   1      
+  20   1              OLED_Init(); //OLED³õÊ¼»¯
+  21   1      //              OLED_Fill(0xff); //ÆÁÈ«ÁÁ
+  22   1      //              OLED_Fill(0x00); //ÆÁÈ«Ãð
+  23   1              // ÏÔÊ¾ÐÅÏ¢
+  24   1              OLED_P16x16Ch(0,0,17);
+  25   1              OLED_P16x16Ch(18,0,0); //ÀÏ
+  26   1              OLED_P16x16Ch(35,0,1); //ÈË
+  27   1              OLED_P16x16Ch(52,0,2); //ÂÖ
+  28   1              OLED_P16x16Ch(69,0,3); //ÒÎ
+  29   1              OLED_P16x16Ch(86,0,4); //¼à
+  30   1              OLED_P16x16Ch(103,0,5); //¿Ø
+  31   1              //ÏÔÊ¾ÐÄÌø
+  32   1              OLED_P16x16Ch(0,2,18);
+  33   1              OLED_P16x16Ch(18,2,6); //ÐÄ
+  34   1              OLED_P16x16Ch(35,2,7); //ÂÊ
+  35   1              OLED_P8x16Str(52,2,":000");
+  36   1              //ÏÔÊ¾ÑªÑ¹Êý¾Ý
+  37   1              OLED_P16x16Ch(0,4,19);
+  38   1              OLED_P16x16Ch(18,4,8); //Ñª
+  39   1              OLED_P16x16Ch(35,4,9); //Ñ¹
+  40   1              OLED_P8x16Str(52,4,"H000 L000");
+  41   1              //ÏÔÊ¾ÍÓÂÝÒÇ
+  42   1              OLED_P16x16Ch(0,6,20);
+  43   1              OLED_P8x16Str(18,6,"000,000,000");
+  44   1      //              OLED_CLS();//ÇåÆÁ
+  45   1      //              Draw_BMP(0,0,128,8,BMP1);  //Í¼Æ¬ÏÔÊ¾(Í¼Æ¬ÏÔÊ¾É÷ÓÃ£¬Éú³ÉµÄ×Ö±í½Ï´ó£¬»áÕ¼ÓÃ½Ï¶à¿Õ¼ä£¬FLASH¿Õ¼ä8KÒÔÏÂÉ÷Ó
+             -Ã)
+  46   1      //              Draw_BMP(0,0,128,8,BMP2);
+  47   1              
+  48   1      }
+  49          
+  50          // ÏÔÊ¾ÐÄÂÊ
+  51          void showHeart(unsigned char str[]){
+  52   1              OLED_P8x16Str(61,2,str);
+C51 COMPILER V9.60.0.0   OLED                                                              09/10/2020 19:38:41 PAGE 2   
+
+  53   1      }
+  54          
+  55          //ÏÔÊ¾ÑªÑ¹
+  56          void showPressH(unsigned char h[]){
+  57   1              OLED_P8x16Str(61,4,h);
+  58   1      }
+  59          void showPressL(unsigned char l[]){
+  60   1              OLED_P8x16Str(101,4,l);
+  61   1      }
+  62          
+  63          
+  64          //ÏÔÊ¾ÍÓÂÝÒÇÊý¾Ý
+  65          void showPosition(unsigned char x[],unsigned char y[],unsigned char z[]){
+  66   1              OLED_P8x16Str(18,6,x);
+  67   1              // ×¢Òâµ¥ÒýºÅºÍË«ÒýºÅµÄÇø±ð
+  68   1              OLED_P8x16Str(42,6,",");
+  69   1              OLED_P8x16Str(50,6,y);
+  70   1              OLED_P8x16Str(74,6,",");
+  71   1              OLED_P8x16Str(82,6,z);
+  72   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1233    ----
+   CONSTANT SIZE    =   4821    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      40
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

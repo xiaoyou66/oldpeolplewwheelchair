@@ -35,3 +35,8 @@ func InsertData(data interface{}) error {
 func TakeLast(data interface{}) error {
 	return Db.Last(data).Error
 }
+
+// 读取最后10条数据
+func TakeRecent(data interface{}, num int) error {
+	return Db.Order("id desc").Limit(num).Find(data).Error
+}

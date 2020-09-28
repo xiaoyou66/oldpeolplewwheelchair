@@ -1,0 +1,8 @@
+".\Objects\STARTUP.obj",
+".\Objects\main.obj",
+".\Objects\send.obj",
+".\Objects\mpu6050.obj",
+".\Objects\heart.obj",
+".\Objects\oled.obj" 
+TO ".\Objects\wheelchair" 
+PRINT(".\Listings\wheelchair.m51") RAMSIZE(256) 
