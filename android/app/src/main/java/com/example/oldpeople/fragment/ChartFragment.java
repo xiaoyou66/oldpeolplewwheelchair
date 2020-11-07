@@ -40,7 +40,7 @@ public class ChartFragment extends Fragment{
     View view;
     @BindView(R.id.chart) LineChart chart;
     private FragmentTransaction fragmentTransaction;
-    private String api = "http://122.51.134.241:1324/api/v1/get/recent_heart";
+    private String api = "http://120.79.4.151:8085/api/v1/get/recent_heart";
     private ReturnData data;
 
     @Nullable

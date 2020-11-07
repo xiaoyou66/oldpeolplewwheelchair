@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"net"
+	"oldpeople/common"
 	"oldpeople/database"
 	"strings"
 	"time"
@@ -25,10 +26,17 @@ func DataProcess(data string) {
 		// 这里说明是心率数据
 		row := strings.Split(data, ",")
 		// 如果数据为空那么就不插入数据
-		if row[1] == "000" || row[1] == "255" {
+		if row[1] == "255" {
 			return
 		}
-		if database.InsertData(&database.Heart{Heart: row[3][:3], HPressure: row[1], LPressure: row[2], Date: time.Now()}) != nil {
+		he:=common.String2Int(row[1])
+		hp:=common.String2Int(row[3])
+		hl:=common.String2Int(row[2])
+		// 判断转换后是否为0
+		if he == 0 || he == 255 || hp == 255 || hp ==0 || hl ==255 || hl ==0{
+			return
+		}
+		if database.InsertData(&database.Heart{Heart: row[3], HPressure: row[1], LPressure: row[2], Date: time.Now()}) != nil {
 			fmt.Println("insert heart data error!")
 		}
 	} else if strings.Index(data, "$MPU6050") != -1 {
@@ -71,7 +79,7 @@ func clientHandle(conn net.Conn) {
 // 启动tcp服务
 func ServerStart() {
 	// 创建一个tcp服务器
-	tcpAddr, err := net.ResolveTCPAddr("tcp4", "0.0.0.0:1326")
+	tcpAddr, err := net.ResolveTCPAddr("tcp4", "0.0.0.0:8086")
 	checkError(err)
 	// 启动tcp服务器并监听端口
 	listen, err := net.ListenTCP("tcp", tcpAddr)

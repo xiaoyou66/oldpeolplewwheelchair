@@ -5,8 +5,8 @@
 #define AP_PSW  "1806040103"//这里改成你的wifi密码
 
 Ticker flipper;
-const uint16_t port = 1326;
-const char * host = "122.51.134.241"; // ip or dns
+const uint16_t port = 8086;
+const char * host = "120.79.4.151"; // ip or dns
 WiFiClient client;//创建一个tcp client连接 
 int lockstatue=0;//关锁状态
 

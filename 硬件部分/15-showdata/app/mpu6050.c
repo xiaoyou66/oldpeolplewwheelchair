@@ -236,7 +236,7 @@ void startGetPosition(){
 	display(GetData(GYRO_YOUT_H));		//显示Y轴角速度
 	SendString(",");
 	display(GetData(GYRO_ZOUT_H));		//显示Z轴角速度
-	SendString("e");
+	SendString(",0e");
 	//显示方向信息
 	lcd_printf(x,GetData(ACCEL_XOUT_H));
 	lcd_printf(y,GetData(ACCEL_YOUT_H));

@@ -149,7 +149,7 @@ void getHeart(){
 	SendString(hex2char(str,heartData[1]));
 	SendString(",");
 	SendString(hex2char(str,heartData[2]));
-	SendString("e");
+	SendString(",0e");
 	// œ‘ æ∆¡œ‘ æ
 	showHeart(hex2char(str,heartData[2]));
 	showPressH(hex2char(str,heartData[0]));

@@ -41,7 +41,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class MapFragment extends Fragment{
-    private String api ="http://122.51.134.241:1324/api/v1/get/gps";
+    private String api ="http://120.79.4.151:8085/api/v1/get/gps";
     private View view;
     @BindView(R.id.map)
     MapView mapView;

@@ -50,7 +50,7 @@ public class HomeFragment extends Fragment {
     private MyPlayer videoPlayer;
     private OrientationUtils orientationUtils;
     private QMUIPullRefreshLayout refersh;
-    private String api ="http://122.51.134.241:1324/api/v1/get/heart";
+    private String api ="http://120.79.4.151:8085/api/v1/get/heart";
     private String url="";
     View view;
     @BindView(R.id.text_heart)

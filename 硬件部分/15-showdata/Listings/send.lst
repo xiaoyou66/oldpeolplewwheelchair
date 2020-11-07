@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   SEND                                                              09/10/2020 19:38:40 PAGE 1   
+C51 COMPILER V9.60.0.0   SEND                                                              11/07/2020 18:51:35 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SEND
@@ -62,7 +62,7 @@ line level    source
   52   1          EA = 1;
   53   1       //   SendString("STC15F2K60S2\r\nUart Test !\r\n");
   54   1      }
-C51 COMPILER V9.60.0.0   SEND                                                              09/10/2020 19:38:40 PAGE 2   
+C51 COMPILER V9.60.0.0   SEND                                                              11/07/2020 18:51:35 PAGE 2   
 
   55          
   56          
@@ -126,7 +126,7 @@ line level    source
  113   1      //        TB8 = 1;                //设置校验位为1
  114   1      //    }
  115   1              // busy表示需要发送数据，当发送完毕时，会清0
-C51 COMPILER V9.60.0.0   SEND                                                              09/10/2020 19:38:40 PAGE 3   
+C51 COMPILER V9.60.0.0   SEND                                                              11/07/2020 18:51:35 PAGE 3   
 
  116   1          busy = 1;
  117   1              // 发需要发送的数据放到寄存器中去
