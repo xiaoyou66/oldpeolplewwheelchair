@@ -20,32 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd91289d-130e-431c-bf08-a79d4f449fad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../android/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/src/main/java/com/example/oldpeople/fragment/ChartFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/example/oldpeople/fragment/ChartFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/src/main/java/com/example/oldpeople/fragment/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/example/oldpeople/fragment/HomeFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/src/main/java/com/example/oldpeople/fragment/MapFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/example/oldpeople/fragment/MapFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/15-showdata/Listings/STARTUP.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/15-showdata/Listings/STARTUP.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/15-showdata/Listings/heart.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/15-showdata/Listings/heart.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/15-showdata/Listings/main.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/15-showdata/Listings/main.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/15-showdata/Listings/mpu6050.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/15-showdata/Listings/mpu6050.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/15-showdata/Listings/oled.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/15-showdata/Listings/oled.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/15-showdata/Listings/send.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/15-showdata/Listings/send.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/15-showdata/Listings/wheelchair.m51" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/15-showdata/Listings/wheelchair.m51" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/15-showdata/Objects/STARTUP.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/15-showdata/Objects/STARTUP.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/15-showdata/Objects/heart.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/15-showdata/Objects/heart.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/15-showdata/Objects/main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/15-showdata/Objects/main.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/15-showdata/Objects/mpu6050.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/15-showdata/Objects/mpu6050.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/15-showdata/Objects/oled.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/15-showdata/Objects/oled.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/15-showdata/Objects/send.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/15-showdata/Objects/send.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/15-showdata/Objects/wheelchair" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/15-showdata/Objects/wheelchair" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/15-showdata/Objects/wheelchair.build_log.htm" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/15-showdata/Objects/wheelchair.build_log.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/15-showdata/Objects/wheelchair.hex" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/15-showdata/Objects/wheelchair.hex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/15-showdata/app/heart.c" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/15-showdata/app/heart.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/15-showdata/app/mpu6050.c" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/15-showdata/app/mpu6050.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/15-showdata/wheelchair.uvgui.Administrator" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/15-showdata/wheelchair.uvgui.Administrator" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../硬件部分/wifi/wifi.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/wifi/wifi.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../硬件部分/AD/__Previews/手环电路图.SchDocPreview" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/AD/__Previews/手环电路图.SchDocPreview" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../硬件部分/AD/手环电路图.SchDoc" beforeDir="false" afterPath="$PROJECT_DIR$/../硬件部分/AD/手环电路图.SchDoc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +59,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../blog/XBlog-web-back" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -222,10 +198,10 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2499" y="249" key="EnvironmentVariablesDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599271867699" />
-    <state x="2409" y="241" key="FileChooserDialogImpl" timestamp="1601110658715">
+    <state x="2202" y="232" key="FileChooserDialogImpl" timestamp="1604997807143">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2409" y="241" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601110658715" />
+    <state x="2202" y="232" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604997807143" />
     <state x="489" y="243" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1600075749340" />
     <state x="2409" y="243" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1599875097522" />
     <state width="1877" height="368" key="GridCell.Tab.0.bottom" timestamp="1600010916114">
