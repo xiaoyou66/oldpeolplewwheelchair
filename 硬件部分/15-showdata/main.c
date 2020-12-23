@@ -16,7 +16,7 @@ void main()
 	uInit();
 	// 初始化串口2
 	u2Init();
-//	delay(150);
+	delay(150);
 //	// 初始化MPU6050
 	InitMPU6050();
 	//OLED 屏幕初始化
@@ -24,6 +24,7 @@ void main()
 //	delay(150);
 	while(1)
 	{
+		//oledInit();
 		//获取心率传感器的数据
 		Startheart();
 		//获取xyz传感器的数据

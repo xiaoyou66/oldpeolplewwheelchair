@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   HEART                                                             11/07/2020 18:51:35 PAGE 1   
+C51 COMPILER V9.60.0.0   HEART                                                             12/20/2020 19:31:17 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE HEART
@@ -62,7 +62,7 @@ line level    source
   52          void u2Init()
   53          {
   54   1              //P_SW2负责控制串口2在2组管脚之间切换的控制位
-C51 COMPILER V9.60.0.0   HEART                                                             11/07/2020 18:51:35 PAGE 2   
+C51 COMPILER V9.60.0.0   HEART                                                             12/20/2020 19:31:17 PAGE 2   
 
   55   1          P_SW2 &= ~S2_S0;            //S2_S0=0 (P1.0/RxD2, P1.1/TxD2)
   56   1      //  P_SW2 |= S2_S0;             //S2_S0=1 (P4.6/RxD2_2, P4.7/TxD2_2)
@@ -126,7 +126,7 @@ line level    source
  114   1          while (busy2);               //等待前面的数据发送完成
  115   1          busy2 = 1;
  116   1          S2BUF = dat;                //写数据到UART2数据寄存器
-C51 COMPILER V9.60.0.0   HEART                                                             11/07/2020 18:51:35 PAGE 3   
+C51 COMPILER V9.60.0.0   HEART                                                             12/20/2020 19:31:17 PAGE 3   
 
  117   1      }
  118          
@@ -156,7 +156,7 @@ line level    source
  142          void getHeart(){
  143   1              char str[4] = {0,0,0,0};
  144   1              //对获取的数据进行处理转换为可以识别的10进制字符串
- 145   1              //串口发送数据(这里我们通过前缀来进行划分)
+ 145   1      //      //串口发送数据(这里我们通过前缀来进行划分)
  146   1              SendString("$HEART,");
  147   1              SendString(hex2char(str,heartData[0]));
  148   1              SendString(",");
@@ -191,7 +191,7 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    BIT SIZE         =      2    ----
 END OF MODULE INFORMATION.
 
-C51 COMPILER V9.60.0.0   HEART                                                             11/07/2020 18:51:35 PAGE 4   
+C51 COMPILER V9.60.0.0   HEART                                                             12/20/2020 19:31:17 PAGE 4   
 
 
 C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

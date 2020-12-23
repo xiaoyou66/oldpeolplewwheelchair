@@ -142,7 +142,7 @@ char * hex2char(char * str,unsigned char dat){
 void getHeart(){
 	char str[4] = {0,0,0,0};
 	//对获取的数据进行处理转换为可以识别的10进制字符串
-	//串口发送数据(这里我们通过前缀来进行划分)
+//	//串口发送数据(这里我们通过前缀来进行划分)
 	SendString("$HEART,");
 	SendString(hex2char(str,heartData[0]));
 	SendString(",");
