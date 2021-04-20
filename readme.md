@@ -34,3 +34,6 @@
 ## 其他技术
 
 1. 内网穿透的使用（用来传输视频数据---不过服务器带宽太低了，所以放弃）
+
+## 视频介绍
+<iframe src="//player.bilibili.com/player.html?aid=627231818&bvid=BV1Wt4y1q7wD&cid=237117095&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
